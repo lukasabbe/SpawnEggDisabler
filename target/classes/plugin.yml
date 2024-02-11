@@ -1,0 +1,4 @@
+name: DisableSpawnEggs
+version: '1.0-SNAPSHOT'
+main: me.lukasabbe.disablespawneggs.DisableSpawnEggs
+api-version: '1.20'
