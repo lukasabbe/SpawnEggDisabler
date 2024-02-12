@@ -3,7 +3,6 @@ package me.lukasabbe.disablespawneggs;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 import java.util.Objects;
 
@@ -15,6 +14,7 @@ public class ReloadCommand implements CommandExecutor {
         }
         DisableSpawnEggs.instance.reloadConfig();
         DisableSpawnEggs.instance.setIsSpawnersOn(DisableSpawnEggs.instance.getConfig().getBoolean("turn-of-spawners"));
+        DisableSpawnEggs.instance.setIsBookCommandsOn(DisableSpawnEggs.instance.getConfig().getBoolean("turn-of-commands-in-books"));
         sender.sendMessage("Reloaded config");
         return true;
     }
