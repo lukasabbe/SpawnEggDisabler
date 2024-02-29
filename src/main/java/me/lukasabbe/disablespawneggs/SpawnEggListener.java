@@ -9,6 +9,7 @@ import org.bukkit.inventory.meta.SpawnEggMeta;
 public class SpawnEggListener implements Listener {
     @EventHandler
     public void onPlayerUse(PlayerInteractEvent event) {
+        if(!DisableSpawnEggs.instance.isSpawnEggsOn()) return;
         if(event.getItem() == null || event.getItem().getItemMeta() == null) return;
         if(event.getItem().getItemMeta() instanceof SpawnEggMeta && event.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
             event.setCancelled(true);
@@ -16,6 +17,7 @@ public class SpawnEggListener implements Listener {
     }
     @EventHandler
     public void onDispenserUse(BlockDispenseEvent event){
+        if(!DisableSpawnEggs.instance.isSpawnEggsDispensersOn()) return;
         if(event.getItem().getItemMeta() == null) return;
         if(event.getItem().getItemMeta() instanceof SpawnEggMeta){
             event.setCancelled(true);

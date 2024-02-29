@@ -1,2 +1,6 @@
-turn-of-spawners: false
+turn-of-spawn-eggs: true
+turn-of-spawn-eggs-in-dispensers: true
+turn-of-spawners: true
 turn-of-commands-in-books: true
+turn-of-block-fade: true
+turn-of-buket-mobs: true

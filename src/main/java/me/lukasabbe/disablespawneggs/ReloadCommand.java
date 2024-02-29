@@ -15,6 +15,10 @@ public class ReloadCommand implements CommandExecutor {
         DisableSpawnEggs.instance.reloadConfig();
         DisableSpawnEggs.instance.setIsSpawnersOn(DisableSpawnEggs.instance.getConfig().getBoolean("turn-of-spawners"));
         DisableSpawnEggs.instance.setIsBookCommandsOn(DisableSpawnEggs.instance.getConfig().getBoolean("turn-of-commands-in-books"));
+        DisableSpawnEggs.instance.setSpawnEggsDispensersOn(DisableSpawnEggs.instance.getConfig().getBoolean("turn-of-spawn-eggs-in-dispensers"));
+        DisableSpawnEggs.instance.setSpawnEggsOn(DisableSpawnEggs.instance.getConfig().getBoolean("turn-of-spawn-eggs"));
+        DisableSpawnEggs.instance.setBlockFadingOn(DisableSpawnEggs.instance.getConfig().getBoolean("turn-of-block-fade"));
+        DisableSpawnEggs.instance.setBuketMobsOn(DisableSpawnEggs.instance.getConfig().getBoolean("turn-of-buket-mobs"));
         sender.sendMessage("Reloaded config");
         return true;
     }
