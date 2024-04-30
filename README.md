@@ -1,5 +1,5 @@
 # This plugin disables all spawn egg:s. Its intended for a creative server. 
-### Download -> [[Link](download)](https://github.com/lukasabbe/SpawnEggDisabler/releases/tag/1.20.6).
+### Download -> [Download](https://github.com/lukasabbe/SpawnEggDisabler/releases/tag/1.20.6).
 Change in config to turn of spawners
 reload config by /spe reload or /spawneggdisabler reload
 
