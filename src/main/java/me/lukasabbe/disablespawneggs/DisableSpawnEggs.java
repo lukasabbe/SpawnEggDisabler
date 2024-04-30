@@ -18,6 +18,7 @@ public final class DisableSpawnEggs extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new DisableBookCommands(), this);
         getServer().getPluginManager().registerEvents(new DisableBucketMobs(), this);
         getServer().getPluginManager().registerEvents(new OnBlockFadeEvent(),this);
+        getServer().getPluginManager().registerEvents(new DisableLeafDecay(), this);
         getCommand("DisableSpawnEggs").setExecutor(new ReloadCommand());
         isSpawnersOn = getConfig().getBoolean("turn-of-spawners");
         isBookCommandsOn = getConfig().getBoolean("turn-of-commands-in-books");
@@ -25,6 +26,7 @@ public final class DisableSpawnEggs extends JavaPlugin {
         isSpawnEggsOn = getConfig().getBoolean("turn-of-spawn-eggs");
         isSpawnEggsDispensersOn = getConfig().getBoolean("turn-of-spawn-eggs-in-dispensers");
         isBlockFadingOn = getConfig().getBoolean("turn-of-block-fade");
+
         instance = this;
     }
 
@@ -40,7 +42,6 @@ public final class DisableSpawnEggs extends JavaPlugin {
     public void setIsBookCommandsOn(boolean isBookCommandsOn){
         this.isBookCommandsOn = isBookCommandsOn;
     }
-
     public boolean isBuketMobsOn() {
         return isBuketMobsOn;
     }

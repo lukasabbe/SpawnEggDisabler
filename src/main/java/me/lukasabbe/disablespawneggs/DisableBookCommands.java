@@ -22,7 +22,6 @@ public class DisableBookCommands implements Listener {
                 if(Boolean.TRUE.equals(data.get(key, PersistentDataType.BOOLEAN))){
                     return;
                 }
-                //event.getPlayer().sendMessage("Removing bad data from book");
                 BookMeta book = (BookMeta) event.getItem().getItemMeta();
                 book.getPersistentDataContainer().set(key, PersistentDataType.BOOLEAN, true);
                 List<String> pages = book.getPages();
