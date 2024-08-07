@@ -1,5 +1,6 @@
-package me.lukasabbe.disablespawneggs;
+package me.lukasabbe.disablespawneggs.commands;
 
+import me.lukasabbe.disablespawneggs.DisableSpawnEggs;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

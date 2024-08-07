@@ -1,5 +1,9 @@
 package me.lukasabbe.disablespawneggs;
 
+import me.lukasabbe.disablespawneggs.commands.ReloadCommand;
+import me.lukasabbe.disablespawneggs.events.*;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class DisableSpawnEggs extends JavaPlugin {
@@ -13,19 +17,21 @@ public final class DisableSpawnEggs extends JavaPlugin {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        getServer().getPluginManager().registerEvents(new SpawnEggListener(), this);
-        getServer().getPluginManager().registerEvents(new SpawnersListener(), this);
-        getServer().getPluginManager().registerEvents(new DisableBookCommands(), this);
-        getServer().getPluginManager().registerEvents(new DisableBucketMobs(), this);
-        getServer().getPluginManager().registerEvents(new OnBlockFadeEvent(),this);
-        getServer().getPluginManager().registerEvents(new DisableLeafDecay(), this);
+        final PluginManager pluginManager = getServer().getPluginManager();
+        pluginManager.registerEvents(new SpawnEggListener(), this);
+        pluginManager.registerEvents(new SpawnersListener(), this);
+        pluginManager.registerEvents(new DisableBookCommands(), this);
+        pluginManager.registerEvents(new DisableBucketMobs(), this);
+        pluginManager.registerEvents(new OnBlockFadeEvent(),this);
+        pluginManager.registerEvents(new DisableLeafDecay(), this);
         getCommand("DisableSpawnEggs").setExecutor(new ReloadCommand());
-        isSpawnersOn = getConfig().getBoolean("turn-of-spawners");
-        isBookCommandsOn = getConfig().getBoolean("turn-of-commands-in-books");
-        isBuketMobsOn = getConfig().getBoolean("turn-of-buket-mobs");
-        isSpawnEggsOn = getConfig().getBoolean("turn-of-spawn-eggs");
-        isSpawnEggsDispensersOn = getConfig().getBoolean("turn-of-spawn-eggs-in-dispensers");
-        isBlockFadingOn = getConfig().getBoolean("turn-of-block-fade");
+        final FileConfiguration config = getConfig();
+        isSpawnersOn = config.getBoolean("turn-of-spawners");
+        isBookCommandsOn = config.getBoolean("turn-of-commands-in-books");
+        isBuketMobsOn = config.getBoolean("turn-of-buket-mobs");
+        isSpawnEggsOn = config.getBoolean("turn-of-spawn-eggs");
+        isSpawnEggsDispensersOn = config.getBoolean("turn-of-spawn-eggs-in-dispensers");
+        isBlockFadingOn = config.getBoolean("turn-of-block-fade");
 
         instance = this;
     }
@@ -45,31 +51,24 @@ public final class DisableSpawnEggs extends JavaPlugin {
     public boolean isBuketMobsOn() {
         return isBuketMobsOn;
     }
-
     public void setBuketMobsOn(boolean buketMobsOn) {
         isBuketMobsOn = buketMobsOn;
     }
-
     public boolean isSpawnEggsOn() {
         return isSpawnEggsOn;
     }
-
     public void setSpawnEggsOn(boolean spawnEggsOn) {
         isSpawnEggsOn = spawnEggsOn;
     }
-
     public boolean isSpawnEggsDispensersOn() {
         return isSpawnEggsDispensersOn;
     }
-
     public void setSpawnEggsDispensersOn(boolean spawnEggsDispensersOn) {
         isSpawnEggsDispensersOn = spawnEggsDispensersOn;
     }
-
     public boolean isBlockFadingOn() {
         return isBlockFadingOn;
     }
-
     public void setBlockFadingOn(boolean blockFadingOn) {
         isBlockFadingOn = blockFadingOn;
     }

@@ -1,6 +1,6 @@
-package me.lukasabbe.disablespawneggs;
+package me.lukasabbe.disablespawneggs.events;
 
-import org.bukkit.Tag;
+import me.lukasabbe.disablespawneggs.DisableSpawnEggs;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockFadeEvent;

@@ -1,10 +1,10 @@
 name: DisableSpawnEggs
 version: '${project.version}'
 main: me.lukasabbe.disablespawneggs.DisableSpawnEggs
-api-version: '1.20'
+api-version: '1.21'
 commands:
   DisableSpawnEggs:
     description: All settings for command
-    aliases: DSE
+    aliases: spe
     usage: /<command> [reload]
     permission: DSE.reload

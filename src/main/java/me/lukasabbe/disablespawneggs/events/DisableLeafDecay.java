@@ -1,4 +1,4 @@
-package me.lukasabbe.disablespawneggs;
+package me.lukasabbe.disablespawneggs.events;
 
 import org.bukkit.Tag;
 import org.bukkit.block.data.type.Leaves;
